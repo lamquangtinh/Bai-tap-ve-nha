@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* pc */
+      /* pc width >=1024 -> min-width */
+
+      /* tablet */
+      /* tablet width >=740 và width<1024 */
+      /* min-width: 740px , max-width: 1023px */
+
+      /* mobile */
+      /* max-width: 739px */
+      body {
+        background-color: aqua;
+        display: flex;
+        height: 100vh;
+        line-height: 100vh;
+      }
+      .mobile,
+      .tablet,
+      .pc {
+        color: blue;
+        font-size: 100px;
+        display: none;
+        margin: 0 auto;
+      }
+      @media screen and (min-width: 1024px) {
+        .pc {
+          display: block;s
+        }
+      }
+      @media screen and (min-width: 740px) and (max-width: 1039px) {
+        .tablet {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 739px) {
+        .mobile {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="mobile">mobile</h2>
+    <h2 class="tablet">tablet</h2>
+    <h2 class="pc">pc</h2>
+  </body>
+</html>

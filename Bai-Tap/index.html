@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="password" id="mat-khau" value="TinhKendy" maxlength="40" />
+    <button type="button" id="btn-mat-khau">Hiện</button>
+
+    <p id="dem-ky-tu"></p>
+
+    <script>
+      const oMatkhau = document.querySelector("#mat-khau");
+      const nut = document.querySelector("#btn-mat-khau");
+      const demKyTu = document.querySelector("#dem-ky-tu");
+
+      nut.addEventListener("click", () => {
+        const dangAn = oMatkhau.type === "password";
+        oMatkhau.type = dangAn ? "text" : "password";
+        nut.textContent = dangAn ? "Ẩn" : "Hiện";
+      });
+
+      function capNhatSoKyTu() {
+        const doDai = oMatkhau.value.length;
+        demKyTu.textContent = `Số ký tự: ${doDai}/40`;
+      }
+
+      oMatkhau.addEventListener("input", capNhatSoKyTu);
+
+      capNhatSoKyTu();
+    </script>
+  </body>
+</html>

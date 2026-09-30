@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đếm ngược OTP</title>
+    <style>
+      body {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 16px;
+        line-height: 1.6;
+      }
+
+      .demo-box {
+        border: 1px solid #ddd;
+        padding: 12px;
+      }
+
+      .demo-box button {
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-box">
+      <button type="button" id="btn-otp">Gửi mã OTP</button>
+    </div>
+
+    <script>
+      const nut = document.querySelector("#btn-otp");
+
+      nut.addEventListener("click", () => {
+        let conLai = 10;
+        nut.disabled = true;
+        nut.textContent = `Gửi lại sau ${conLai} s`;
+
+        const dem = setInterval(() => {
+          conLai--;
+          nut.textContent = `Gửi lại sau ${conLai} s`;
+
+          if (conLai <= 0) {
+            clearInterval(dem);
+            nut.disabled = false;
+            nut.textContent = "Gửi mã OTP";
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

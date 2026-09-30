@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS unit</title>
+  </head>
+  <style>
+    .percent {
+      width: 50%;
+      height: 100px;
+      background-color: aqua;
+    }
+    .rem {
+      font-size: 2rem;
+    }
+  </style>
+  <body>
+    <!-- px: pixels : đơn vị cố định, không bị thay đổi -->
+
+    <!--%: dựa vào thẻ chứa nó -->
+    <!-- 50%: nửa kích thước của trình duyệt  -->
+    <!-- rem: phụ thuộc vào thẻ html -->
+    <!-- em: phụ thuộc thẻ cha gần nhất -->
+    <div class="aaa">
+      <div class="unit-em">
+        <p>Unit EM TINH KENDY</p>
+      </div>
+    </div>
+    <p class="rem">Unit EM</p>
+    <div class="pixels"></div>
+    <div class="percent"></div>
+  </body>
+</html>

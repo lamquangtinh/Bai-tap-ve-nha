@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách đi chợ</title>
+    <style>
+      body {
+        max-width: 500px;
+        margin: 20px auto;
+        font-family: sans-serif;
+      }
+      .da-mua {
+        text-decoration: line-through;
+        color: gray;
+      }
+      li {
+        cursor: pointer;
+        padding: 6px 0;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Danh sách đi chợ</h2>
+
+    <form id="form">
+      <input type="text" id="o-ten" placeholder="Nhập tên món..." />
+      <button type="submit">Thêm</button>
+    </form>
+
+    <p id="thong-ke"></p>
+    <ul id="ds"></ul>
+
+    <script>
+      const form = document.querySelector("#form");
+      const oTen = document.querySelector("#o-ten");
+      const ds = document.querySelector("#ds");
+      const thongKe = document.querySelector("#thong-ke");
+
+      let danhSach = JSON.parse(localStorage.getItem("dsDiCho")) || [];
+
+      function capNhat() {
+        localStorage.setItem("dsDiCho", JSON.stringify(danhSach));
+        ds.innerHTML = "";
+
+        danhSach.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = item.ten;
+          if (item.daMua) li.classList.add("da-mua");
+
+          li.addEventListener("click", () => {
+            item.daMua = !item.daMua;
+            capNhat();
+          });
+
+          li.addEventListener("dblclick", () => {
+            danhSach.splice(index, 1);
+            capNhat();
+          });
+
+          ds.appendChild(li);
+        });
+
+        const chuaMua = danhSach.filter((m) => !m.daMua).length;
+        thongKe.textContent = `Còn ${chuaMua}/${danhSach.length} món chưa mua`;
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const ten = oTen.value.trim();
+        if (!ten) return;
+
+        danhSach.push({ ten: ten, daMua: false });
+        oTen.value = "";
+        capNhat();
+      });
+
+      capNhat();
+    </script>
+  </body>
+</html>

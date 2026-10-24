@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #faf9f6;
+    color: #252525;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a36b45;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #ece8e2;
+}
+
+.nav {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.brand span {
+    color: #b47b52;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.nav-button {
+    border: 0;
+    background: transparent;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 90px 0 75px;
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: #a36b45;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.15;
+    margin: 16px 0;
+}
+
+.hero > p:last-child {
+    color: #6b6b6b;
+    font-size: 17px;
+}
+
+.featured,
+.empty-state {
+    background: #fff;
+    border: 1px solid #eee8e0;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 40px;
+}
+
+.posts-section {
+    padding-bottom: 70px;
+}
+
+.posts-section h2 {
+    font-size: 30px;
+}
+
+.post-card {
+    background: #fff;
+    border: 1px solid #eee8e0;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 20px 0;
+}
+
+.post-card img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.post-card h3 {
+    font-size: 23px;
+}
+
+.post-date {
+    color: #888;
+    font-size: 13px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #252525;
+    color: white;
+    border-radius: 8px;
+}
+
+.button:hover {
+    color: white;
+    background: #a36b45;
+}
+
+.alert {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+
+.success {
+    background: #e5f6e9;
+}
+
+.error {
+    background: #ffe9e9;
+}
+
+.site-footer {
+    padding: 25px;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #ece8e2;
+    color: #777;
+}
+
+.pagination {
+    margin: 25px 0;
+}
+
+@media (max-width: 600px) {
+    .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+}

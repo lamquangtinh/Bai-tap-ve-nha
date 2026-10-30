@@ -29,11 +29,16 @@
             @enderror
         </div>
 
+        <!-- PHẦN ĐÃ CẬP NHẬT: Thêm link Quên mật khẩu nằm bên phải -->
         <div class="flex items-center justify-between text-sm">
             <label class="flex items-center text-slate-600 cursor-pointer">
                 <input type="checkbox" name="remember" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 mr-2">
                 Ghi nhớ đăng nhập
             </label>
+
+            <a href="{{ route('password.request') }}" class="text-indigo-600 hover:underline font-semibold">
+                Quên mật khẩu?
+            </a>
         </div>
 
         <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-sm transition">
